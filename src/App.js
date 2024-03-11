@@ -3,14 +3,11 @@
 import React from "react";
 import "./App.css";
 import Navbar from "./components";
-import {
-	BrowserRouter as Router,
-	Routes,
-	Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Home from "./pages/Homepage";
 import Projects from "./pages/Projects";
 import Portfolio from "./pages/Portfolio";
+
 
 function App() {
 	return (

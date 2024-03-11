@@ -3,20 +3,23 @@
 import { FaBars } from "react-icons/fa";
 import { NavLink as Link } from "react-router-dom";
 import styled from "styled-components";
+//import { Helmet } from "react-helmet";
 
-//main navigation bar 
+
+//main navigation bar, sets style, bg color, height, and where the links show up 
 export const Nav = styled.nav`
 	background: #DCDBFF;
 	height: 75px;
 	display: flex;
-	justify-content: space-between;
-	padding: 0.2rem calc((240vw - 1000px) / 2);
+	justify-content: flex-end;
+	padding: 0 20px;
 	z-index: 12;
 	/* Third Nav */
 	/* justify-content: flex-start; */
 `;
 
-//each link - home, portfolio,
+//represents each link - home, portfolio, projects
+//
 export const NavLink = styled(Link)`
 	color: #908EFF;
 	display: flex;
@@ -25,9 +28,23 @@ export const NavLink = styled(Link)`
 	padding: 0 1rem;
 	height: 100%;
 	cursor: pointer;
+  postition: relative;
 	&.active {
 		color: #6B68FF;
 	}
+  
+  /* add circle border around each link - need to fix later cuz it doesnt work */
+  &::before {
+    content: '';
+    position: absolute;
+    width: 80px; /* Adjust the size of the circle */
+    height: 30px; /* Adjust the size of the circle */
+    background-color: #F9F8FF; /* Adjust the color of the circle */
+    border-radius: 100%; /* Makes it a circle */
+    top: 6%; /* Centers vertically */
+    left: 810px; /* Adjust the distance from the link */
+    transform: translateY(-50%); /* Centers vertically */
+    z-index: -1;
 `;
 
 export const Bars = styled(FaBars)`
@@ -88,3 +105,9 @@ white-space: nowrap; */
 // 		color: #808080;
 // 	}
 //`;
+
+// export const DynamicTitle = ({title}) => (
+// 	<Helmet>
+// 		<title>{title}</title>
+// 	</Helmet>
+// );
